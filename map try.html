@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mpa for blood donation site</title>
+    <style type="text/css">
+        #map
+        {
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
+<script type="text/javascript">
+      var latitude;
+      var longitude;
+     function showLocation(position){
+             latitude = position.coords.latitude;
+             longitude = position.coords.longitude;
+             console.log(latitude);
+             console.log(longitude);
+                         var locations = [
+                    {
+          title:"Geolocation recieved",
+          location:{lat:latitude, lng:longitude}
+        }
+            ];
+             var position = locations[0].location;
+             var title = locations[0].title;
+             var marker = new google.maps.Marker({
+           position: position,
+          title: title,
+          map:map
+         });
+         }
+    function initMap()
+
+    {
+          if(navigator.geolocation){
+               // timeout at 60000 milliseconds (60 seconds)
+              // var options = {timeout:60000};
+               navigator.geolocation.getCurrentPosition(showLocation);
+
+            }
+
+           /* else{
+               alert("Sorry, browser does not support geolocation!");
+            }*/
+        var options ={
+            zoom:11,
+            center:{lat:30.403732,lng:76.502679}
+        }
+        var map = new google.maps.Map(document.getElementById('map'),options);
+        var locations = [
+        {
+            title:"Lifeline Blood Center",
+            location :{lat:30.343732, lng:76.399473}
+        },
+        {
+            title:"Govt. Medical College Patiala",
+            location:{lat:30.327763 , lng:76.384894}
+        },
+        {
+            title:"Patiala Distt. Blood Transfusion Council",
+            location:{lat:30.594668,lng:76.402679}
+        },
+        {
+            title:"AP Jain Hosptal",
+            location:{lat:30.478442, lng:76.584030}
+        }
+        ];
+
+          for (var i = 0; i < locations.length; i++) {
+              var position = locations[i].location;
+              var title = locations[i].title;
+          // Create a marker per location, and put into markers array.
+          var marker = new google.maps.Marker({
+           position: position,
+          title: title,
+          map:map
+         });
+//              markers.push(marker);
+          }
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgDsvovrYIA4MsWFTG_n9JOhO3DSz8VZQ&callback=initMap">
+    </script>
+</body>
+</html>

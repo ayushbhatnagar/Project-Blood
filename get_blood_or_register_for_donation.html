@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <style type="text/css">
+        td
+        {
+            padding: 5px;
+        }
+        input[type=text]
+        {
+            background-color: red;
+        }
+input[type=text]:focus {
+  box-shadow: 0 0 5px green;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid red;
+  background-color: green;
+}
+select {
+  font-family: Cursive;
+  border: 0;
+}
+select:focus
+{
+    font-size: 16px;
+    border: 0;
+}
+
+    </style>
+
+</head>
+<body>
+<div class="col-md-6 get_blood">
+    <form>
+    <table>
+        <tr>
+            <td>Location: </td>
+            <td><input type="text" name="location" value="location" placeholder="Your current Location"></td>
+        </tr>
+        <tr>
+            <td>Blood Group:</td>
+            <td>
+            <select>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="A-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                </select>
+        </td>
+        </tr>
+        <tr>
+            <td>Distance you can travel to get blood </td>
+            <td>
+            <input type="radio" name="dist" value="10">10Kms<br>
+            <input type="radio" name="dist" value="20">20Kms<br>
+            <input type="radio" name="dist" value="40">40Kms<br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                <input type="text" name="name" placeholder="Your Name">
+            </td>
+        </tr>
+        <tr>
+            <td>Contact No.</td>
+            <td><input type="text" name="number" placeholder="Conatct Number"></td>
+        </tr>
+    </table>
+        <br>
+
+    </form>
+</div>
+<div class="col-md-6"></div>
+</body>
+</html>
